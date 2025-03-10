@@ -1,0 +1,94 @@
+# Template for adding new names to the database
+
+Format:
+{
+    "name": "Name of the baby",
+    "gender": "Male/Female/Neutral",
+    "origin": "Cultural origin of the name",
+    "region": ["List of regions where the name is common"],
+    "language": ["List of languages associated with the name"],
+    "meaning": "Meaning of the name"
+}
+
+Example entries:
+
+1. Single region/language name:
+{
+    "name": "Aria",
+    "gender": "Female",
+    "origin": "Italian",
+    "region": ["European"],
+    "language": ["Italian"],
+    "meaning": "Air, melody"
+}
+
+2. Multiple regions/languages name:
+{
+    "name": "Maya",
+    "gender": "Female",
+    "origin": "Sanskrit-Hebrew",
+    "region": ["South Asian", "Middle Eastern"],
+    "language": ["Sanskrit", "Hebrew"],
+    "meaning": "Illusion in Sanskrit, Water in Hebrew"
+}
+
+Available options:
+
+Genders:
+- Male
+- Female
+- Neutral
+
+Regions:
+- European
+- North American
+- South American
+- East Asian
+- South Asian
+- Southeast Asian
+- Middle Eastern
+- African
+- Mediterranean
+- Nordic
+- Celtic
+- Slavic
+- Pacific Islander
+
+Languages:
+- English
+- Spanish
+- French
+- German
+- Italian
+- Portuguese
+- Russian
+- Mandarin
+- Japanese
+- Korean
+- Hindi
+- Arabic
+- Hebrew
+- Greek
+- Turkish
+- Vietnamese
+- Thai
+- Swedish
+- Danish
+- Norwegian
+- Polish
+- Czech
+- Irish
+- Welsh
+- Sanskrit
+
+To add a name to the database, use this SQL command:
+
+INSERT INTO names (name, gender, origin, region, language, meaning)
+VALUES 
+    ('Name', 'Gender', 'Origin', ARRAY['Region1', 'Region2'], ARRAY['Language1', 'Language2'], 'Meaning');
+
+Example SQL:
+
+INSERT INTO names (name, gender, origin, region, language, meaning)
+VALUES 
+    ('Aria', 'Female', 'Italian', ARRAY['European'], ARRAY['Italian'], 'Air, melody');
